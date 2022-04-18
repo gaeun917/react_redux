@@ -6,9 +6,10 @@ import NewTodoForm from './NewTodoForm';
 import TodoListItem from './TodoListItem';
 import './styles/TodoList.css';
 
-
-
-const TodoList = ({todos = [], onRemovePressed, isLoading, startLoadingTodos}) => {
+const TodoList = ({todos = [],
+                      onRemovePressed,
+                      isLoading,
+                      startLoadingTodos}) => {
 
     useEffect(() => {
         startLoadingTodos();
@@ -18,8 +19,7 @@ const TodoList = ({todos = [], onRemovePressed, isLoading, startLoadingTodos}) =
     const content = (
         <div className="list-wrapper">
             <NewTodoForm/>
-            {todos.map((todo, i) => <TodoListItem todo={todo}
-                                                  id={i}
+            {todos.map((todo) => <TodoListItem todo={todo}
                                                   onRemovePressed={onRemovePressed}
             />)}
         </div>
