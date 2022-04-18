@@ -1,20 +1,23 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux';
-import {devToolsEnhancer} from 'redux-devtools-extension';
 import thunk from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension'
-
 
 import {persistReducer} from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2'
 
 
-import {todos} from './todos/reducer'
+import {todos, isLoading} from './todos/reducer';
+
+
+
+
 //action, reducer
 
 
 const reducers = {
-    todos
+    todos,
+    isLoading
 };
 
 
