@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import {createTodo} from './actions'
-
+import {addTodosRequest} from './thunk'
 
 
 import './styles/NewTodoForm.css';
@@ -30,7 +30,7 @@ const NewTodoForm = ({todos, onCreatePressed}) => {
                     }}
 
 
-            >Create Todo
+            >Create Todos
             </button>
         </div>
     );
@@ -42,7 +42,7 @@ const mapStateProps = (state) => ({
 
 // import action and dispatch action with props and pass as props on fn
 const mapDispatchProps = (dispatch) => ({
-    onCreatePressed: text => dispatch(createTodo(text)),
+    onCreatePressed: text => dispatch(addTodosRequest(text)),
 })
 
 
