@@ -1,7 +1,5 @@
 export const CREATE_TODO = 'CREATE_TO';
 export const REMOVE_TODO = 'REMOVE_TODO';
-
-//thunks
 export const LOAD_TODOS_IN_PROGRESS = 'LOAD_TODOS_IN_PROGRESS';
 export const LOAD_TODOS_SUCCESS = 'LOAD_TODOS_SUCCESS';
 export const LOAD_TODOS_FAILURE = 'LOAD_TODOS_FAILURE';
@@ -11,11 +9,10 @@ export const createTodo = (todo) => ({
     payload: {todo},
 })
 
-export const removeTodo = (text) => ({
+export const removeTodo = (todo) => ({
     type: REMOVE_TODO,
-    payload: {text},
+    payload: {todo},
 })
-
 
 export const loadTodosInProgress = () => ({
     type: LOAD_TODOS_IN_PROGRESS,
