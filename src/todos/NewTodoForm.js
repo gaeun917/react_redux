@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
-import {createTodo} from './actions'
 import {addTodosRequest} from './thunk'
+import {getTodos }from './selectors'
 
 
 import './styles/NewTodoForm.css';
@@ -37,7 +37,7 @@ const NewTodoForm = ({todos, onCreatePressed}) => {
 };
 // interacting state, so pass {todos} as props on this function
 const mapStateProps = (state) => ({
-    todos: state.todos,
+    todos: getTodos(state),
 });
 
 // import action and dispatch action with props and pass as props on fn

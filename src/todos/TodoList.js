@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {loadTodos, removeTodosRequest} from './thunk'
 import NewTodoForm from './NewTodoForm';
 import TodoListItem from './TodoListItem';
+import {getTodos,getTodosLoading }from './selectors'
+
 import './styles/TodoList.css';
 
 const TodoList = ({todos = [],
@@ -29,8 +31,8 @@ const TodoList = ({todos = [],
 
 // interacting state, so pass {todos} as props on this function
 const mapStateProps = (state) => ({
-    isLoading: state.isLoading,
-    todos: state.todos,
+    isLoading: getTodosLoading(state),
+    todos: getTodos(state)
 });
 
 // import action and dispatch action with props and pass as props on fn
